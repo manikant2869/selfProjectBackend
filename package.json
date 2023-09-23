@@ -1,0 +1,20 @@
+{
+  "name": "serverside",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate_models": "sequelize-auto -h localhost -d selfProject -u root -x root -p 3306  --dialect mysql  -o ./models"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.3.2",
+    "sequelize": "^6.31.1",
+    "sequelize-auto": "^0.8.8",
+    "sqlite3": "^5.1.6"
+  }
+}
