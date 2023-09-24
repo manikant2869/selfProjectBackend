@@ -4,21 +4,23 @@ metadata:
   name: backend
 spec:
   selector:
-    app: backend
+    matchLabels:
+      app: backend
   replicas: 2
   template:
     labels:
       app: backend
-    containers:
-    - name: backend
-      image: manikant2869/selfproject:$BUILD_NUMBER
-      ports:
-      - containerPort: 3306
-      env:
-      - name: Database
-        value: selfProject
-      - name: Host
-        value: database
+    spec:
+      containers:
+      - name: backend
+        image: manikant2869/selfproject:$BUILD_NUMBER
+        ports:
+        - containerPort: 3306
+        env:
+        - name: Database
+          value: selfProject
+        - name: Host
+          value: database
 ---
 apiVersion: Service
 kind: v1
