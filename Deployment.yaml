@@ -23,8 +23,8 @@ spec:
         - name: Host
           value: database
 ---
-apiVersion: Service
-kind: v1
+apiVersion: v1
+kind: Service
 metadata:
   name: backendsvc
 spec:
