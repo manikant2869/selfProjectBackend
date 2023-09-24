@@ -20,7 +20,7 @@ spec:
         env:
         - name: Database
           value: selfProject
-        - name: Host
+        - name: HOST
           value: database
 ---
 apiVersion: v1
