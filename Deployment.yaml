@@ -8,8 +8,9 @@ spec:
       app: backend
   replicas: 2
   template:
-    labels:
-      app: backend
+    metadata:
+      labels:
+        app: backend
     spec:
       containers:
       - name: backend
