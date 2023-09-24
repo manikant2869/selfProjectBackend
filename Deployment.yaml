@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: manikant2869/selfproject:$BUILD_NUMBER
+        image: "manikant2869/selfproject:$(BUILD_NUMBER)"
         ports:
         - containerPort: 3306
         env:
