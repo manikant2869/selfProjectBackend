@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: backend
+spec:
+  selector:
+    app: backend
+  replicas: 2
+  template:
+    labels:
+      app: backend
+    containers:
+    - name: backend
+      image: manikant2869/selfproject:latest
+      ports:
+      - containerPort: 3306
+      env:
+      - name: Database
+        value: selfProject
+      - name: Host
+        value: database
+---
+apiVersion: Service
+kind: v1
+metadata:
+  name: backendsvc
+spec:
+  selector:
+    app: backend
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3306
+
+
+    
