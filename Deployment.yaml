@@ -19,9 +19,9 @@ spec:
         - containerPort: 3306
         env:
         - name: Database
-          value: selfProject
+          value: "selfProject"
         - name: DB_HOST
-          value: database
+          value: "database"
 ---
 apiVersion: v1
 kind: Service
