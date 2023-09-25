@@ -21,7 +21,7 @@ spec:
         - name: Database
           value: "selfProject"
         - name: DB_HOST
-          value: "database"
+          value: "10.100.34.212"
 ---
 apiVersion: v1
 kind: Service
