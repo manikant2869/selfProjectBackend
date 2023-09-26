@@ -1,7 +1,7 @@
 const mysql2 = require('mysql2');
 const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize(
-    "selfProject",
+    process.env.Database,
     "root",
     "root",
     {
