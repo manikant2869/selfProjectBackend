@@ -3,7 +3,7 @@ const PORT = 3001;
 const express = require("express");
 const server = express()
 const sequelize = require("./db/dbconnection")
-// require("dotenv").config()
+require("dotenv").config()
 const bodyParser = require("body-parser");
 const cors = require("cors")
 

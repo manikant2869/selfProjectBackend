@@ -22,10 +22,8 @@ module.exports = {
       let userdata = await user.findOne({
         where: { username: data.username }
       });
-      console.log(userdata);
       if (userdata) {
         let password = userdata.password;
-        console.log("password", password);
         if (password === data.password) {
           finduser = userdata;
           return {
