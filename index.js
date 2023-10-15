@@ -6,18 +6,22 @@ const sequelize = require("./db/dbconnection")
 require("dotenv").config()
 const bodyParser = require("body-parser");
 const cors = require("cors")
-
  global.sequelize = sequelize
-
+const monitor = require("./monitoring/monitor")
 server.use(express.json())
 server.use(cors())
 
 const userRoute = require("./routes/user")
 server.get("/",(req,res)=>{
+   monitor.count.inc({"method":"GET","statuscode":"200","route":"/"})
   res.send("hello world");
 })
 server.use("/user",userRoute)
 
+server.use("/metrics",async(req,res)=>{
+  // res.setHeader('Content-Type', register.contentType);
+  res.send(await monitor.register.metrics());
+})
 
 server.listen(PORT,(error)=>{
     if(!error){
@@ -30,3 +34,5 @@ server.listen(PORT,(error)=>{
 }
 
 )
+
+// module.exports = count_signup
